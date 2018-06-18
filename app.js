@@ -9,16 +9,11 @@ console.log('hey');
 //     }
 // }, 2000);
 
-console.log(__dirname);
-
-console.log(__filename);
-
-
-function call(fun){
+function call(fun) {
     fun();
 };
 
-var saybye = function(){
+var saybye = function () {
     console.log("bye");
 };
 
