@@ -1,3 +1,4 @@
+var counter = require('./counter');
 console.log('hey');
 
 // var time  = 0;
@@ -18,3 +19,5 @@ var saybye = function () {
 };
 
 call(saybye);
+
+//counter([1,2,3,4,4,5,]);
