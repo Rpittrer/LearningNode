@@ -1,8 +1,9 @@
 const fs = require('fs');
 const os = require('os');
+//const counter = require('./counter');
+const notes = require('./notes');
 
-var counter = require('./counter');
-console.log('hey');
+console.log('Starting app.js');
 
 // var time  = 0;
 // var timer = setInterval(function(){
@@ -13,20 +14,20 @@ console.log('hey');
 //     }
 // }, 2000);
 
-function call(fun) {
-	fun();
-};
+// function call(fun) {
+// 	fun();
+// };
 
-var saybye = function () {
-	console.log("bye");
-};
+// var saybye = function () {
+// 	console.log("bye");
+// };
 
-call(saybye);
+// call(saybye);
 
-//counter([1,2,3,4,4,5,]);
+// counter([1,2,3,4,4,5,]);
 
 var user = os.userInfo();
-console.log(user);
+// console.log(user);
 
-fs.appendFileSync('greetings.txt', 'hello ' + user.username);
-fs.appendFileSync('greetings.txt', 'hello ${user.username}!');    //doesn't work
+fs.appendFileSync('greetings.txt', 'hello ' + user.username + 'you are ' + notes.age);
+// fs.appendFileSync('greetings.txt', 'hello ${user.username}!');    //doesn't work
