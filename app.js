@@ -29,7 +29,7 @@ console.log('Starting app.js');
 var user = os.userInfo();
 // console.log(user);
 
-fs.appendFileSync('greetings.txt', 'hello ' + user.username + 'you are ' + notes.age);
-// fs.appendFileSync('greetings.txt', 'hello ${user.username}!');    //doesn't work
-console.log(notes.addNote());
+//fs.appendFileSync('greetings.txt', 'hello ' + user.username + 'you are ' + notes.age);
+fs.appendFileSync('greetings.txt', `hello ${user.username}! you are ${notes.age}`);    //doesn't work with '' or "" use back ticks ``
+ console.log(notes.addNote());
 console.log(notes.addNum(7,'abnc'));
