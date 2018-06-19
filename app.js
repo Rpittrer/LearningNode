@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 var counter = require('./counter');
 console.log('hey');
 
@@ -11,13 +13,15 @@ console.log('hey');
 // }, 2000);
 
 function call(fun) {
-    fun();
+	fun();
 };
 
 var saybye = function () {
-    console.log("bye");
+	console.log("bye");
 };
 
 call(saybye);
 
 //counter([1,2,3,4,4,5,]);
+
+fs.appendFileSync('greetings.txt','hello world');
