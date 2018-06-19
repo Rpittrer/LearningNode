@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os');
 
 var counter = require('./counter');
 console.log('hey');
@@ -24,4 +25,8 @@ call(saybye);
 
 //counter([1,2,3,4,4,5,]);
 
-fs.appendFileSync('greetings.txt','hello world');
+var user = os.userInfo();
+console.log(user);
+
+fs.appendFileSync('greetings.txt', 'hello ' + user.username);
+fs.appendFileSync('greetings.txt', 'hello ${user.username}!');    //doesn't work
