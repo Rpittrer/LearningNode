@@ -31,3 +31,5 @@ var user = os.userInfo();
 
 fs.appendFileSync('greetings.txt', 'hello ' + user.username + 'you are ' + notes.age);
 // fs.appendFileSync('greetings.txt', 'hello ${user.username}!');    //doesn't work
+console.log(notes.addNote());
+console.log(notes.addNum(7,'abnc'));
