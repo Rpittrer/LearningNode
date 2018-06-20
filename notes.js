@@ -32,12 +32,18 @@ var getAll = () => {
 	console.log('getting all notes.');
 };
 var getNote = (title) => {
-	console.log('Here is your note: \n');
+	var notes = fetchNotes();
+	var filteredNote = notes.filter((note) => note.title === title);
+	return filteredNote[0];
 
 };
 
 var removeNote = (title) => {
-	console.log(`${title} was removed.`);
+	var notes = fetchNotes();
+	var newNotes = notes.filter((note) => note.title !== title);
+	saveNotes(newNotes);
+
+	return notes.length !== newNotes.length;
 };
 
 
