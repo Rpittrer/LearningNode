@@ -1,4 +1,4 @@
-console.log('starting App.js');
+
 
 const fs = require('fs');
 const _ = require('lodash');
@@ -9,27 +9,27 @@ var argv = yargs.argv;
 
 
 var command = process.argv[2];
-console.log('Command: ', command);
-console.log('Process: ', process.argv);
-console.log('Yargs', argv);
+console.log(command);
 
 if (command === 'add') {
 	var note = notes.addNote(argv.title, argv.body);
 	console.log(typeof (note));
 	if (note) {
 		console.log("Added note!");
-		console.log(`Title: ${note.title} \nBody: ${note.body}`);
+		notes.logNote(note);
 	} else {
 		console.log("Note with same title already exists.");
 	}
 } else if (command === 'list') {
-	notes.getAll();
+	var noteList = notes.getAll();
+	noteList.forEach(note => notes.logNote(note));
+	
 } else if (command === 'read') {
 	var note = notes.getNote(argv.title);
-	if(note){
-		console.log(typeof(note));
-		console.log(`Body: ${note.body}`);
-	} else{
+	if (note) {
+		console.log(typeof (note));
+		notes.logNote(note);
+	} else {
 		console.log("Note not found");
 	}
 } else if (command === 'remove') {
